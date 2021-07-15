@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { ButtonHTMLAttributes } from "react"
 
-export function Button() {
-    const [counter , setCounter] = useState(0)
 
-    function inerement() {
-        setCounter(counter +1);
-    }
+import '../styles/button.scss'
+
+type ButtoProps = ButtonHTMLAttributes<HTMLButtonElement>;
+export function Button(props: ButtoProps) {
+
+
 
     return (
-        <button onClick={inerement}>
-        {counter}
-        </button>
+        <button className="button" {...props}/>
+      
+  
     )
 }
+

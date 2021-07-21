@@ -42,6 +42,8 @@ export function Room() {
         };
     
         await database.ref(`room/${roomId}/questions`).push(question);
+    
+        setNewQuestion('');
     }
 
 
@@ -72,15 +74,11 @@ export function Room() {
                     
                     <div className="form-footer">
                         <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
-                        <Button type="submit" >Enviar perguntar</Button>
+                        <Button type="submit" disabled={!user}>Enviar perguntar</Button>
                     </div>
                 </form>
-
             </main>
-
         </div>
-
-
     );
 }
 
